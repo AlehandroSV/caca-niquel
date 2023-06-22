@@ -1,13 +1,25 @@
 <template>
   <h1>Home</h1>
-  <Button @click="closePopup">
-    <template #text>Teste</template>
+  <Button @click="toggleGameOpen">
+    <template #text>Game</template>
   </Button>
 
-  <Popup :is-open="isOpen" :on-close="closePopup">
+  <Button @click="toggleVideoOpen">
+    <template #text>Video</template>
+  </Button>
+
+  <Popup :is-open="gameOpen" :on-close="toggleGameOpen">
     <template #children>
       <div class="m-2">
-        <h1>Video Super Bacana</h1>
+        <h1>{{ jsonData[0].game[0].subtitle }}</h1>
+      </div>
+    </template>
+  </Popup>
+
+  <Popup :is-open="videoOpen" :on-close="toggleVideoOpen">
+    <template #children>
+      <div class="m-2">
+        <h1>{{ jsonData[0].video[0].subtitle }}</h1>
       </div>
     </template>
   </Popup>
@@ -23,16 +35,18 @@ export default {
   components: { Button, Popup },
   data() {
     return {
-      isOpen: false,
+      gameOpen: false,
+      videoOpen: false,
+      jsonData: JsonData,
     };
   },
   methods: {
-    closePopup() {
-      this.isOpen = !this.isOpen;
+    toggleGameOpen() {
+      this.gameOpen = !this.gameOpen;
     },
-  },
-  created() {
-    console.log(JsonData);
+    toggleVideoOpen() {
+      this.videoOpen = !this.videoOpen;
+    },
   },
 };
 </script>

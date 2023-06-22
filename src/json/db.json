@@ -1,5 +1,30 @@
 [
   {
-    "title": "vala"
+    "game": [
+      {
+        "title": "Titulo",
+        "subtitle": "Game",
+        "formulario": [
+          {
+            "placeholder": "Placeholder",
+            "type": "text",
+            "value": ""
+          }
+        ]
+      }
+    ],
+    "video": [
+      {
+        "title": "Titulo",
+        "subtitle": "Video",
+        "formulario": [
+          {
+            "placeholder": "Placeholder",
+            "type": "text",
+            "value": ""
+          }
+        ]
+      }
+    ]
   }
 ]
