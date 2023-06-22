@@ -1,29 +1,25 @@
 [
   {
-    "game": [
+    "title": "Titulo",
+    "subtitle": "Game",
+    "formulario": [
       {
-        "title": "Titulo",
-        "subtitle": "Game",
-        "formulario": [
-          {
-            "placeholder": "Placeholder",
-            "type": "text",
-            "value": ""
-          }
-        ]
+        "placeholder": "Placeholder",
+        "type": "text",
+        "value": ""
       }
-    ],
-    "video": [
+    ]
+  },
+  {
+    "title": "Titulo",
+    "subtitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit temporibus maxime aspernatur consectetur possimus assumenda similique fugit impedit atque qui commodi aperiam corporis ex ullam tempore, explicabo quisquam asperiores quae!",
+    "link_youtube": "https://www.youtube.com/embed/QrSWODOQ0tY",
+    "link": "imgs/caca-niquel.png",
+    "formulario": [
       {
-        "title": "Titulo",
-        "subtitle": "Video",
-        "formulario": [
-          {
-            "placeholder": "Placeholder",
-            "type": "text",
-            "value": ""
-          }
-        ]
+        "placeholder": "Placeholder",
+        "type": "text",
+        "value": ""
       }
     ]
   }

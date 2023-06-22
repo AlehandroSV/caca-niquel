@@ -8,21 +8,41 @@
     <template #text>Video</template>
   </Button>
 
-  <Popup :is-open="gameOpen" :on-close="toggleGameOpen">
-    <template #children>
-      <div class="m-2">
-        <h1>{{ jsonData[0].game[0].subtitle }}</h1>
-      </div>
-    </template>
-  </Popup>
+  <div v-for="data in jsonData" :key="data.title">
+    <Popup :is-open="gameOpen" :on-close="toggleGameOpen">
+      <template #children>
+        <div class="m-2"></div>
+      </template>
+    </Popup>
 
-  <Popup :is-open="videoOpen" :on-close="toggleVideoOpen">
-    <template #children>
-      <div class="m-2">
-        <h1>{{ jsonData[0].video[0].subtitle }}</h1>
-      </div>
-    </template>
-  </Popup>
+    <Popup :is-open="videoOpen" :on-close="toggleVideoOpen">
+      <template #children>
+        <div class="flex flex-col m-2 items-center">
+          <div class="mb-4 text-center">
+            <h1 class="font-semibold text-2xl mb-2">{{ data.title }}</h1>
+            <p class="max-w-4xl">
+              {{ data.subtitle }}
+            </p>
+          </div>
+
+          <div v-show="data.link_youtube" class="w-full h-full">
+            <iframe
+              :src="data.link_youtube"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              class="rounded-lg w-full h-80"
+            ></iframe>
+          </div>
+
+          <div v-show="data.link" class="w-full h-full">
+            <img :src="data.link" />
+          </div>
+        </div>
+      </template>
+    </Popup>
+  </div>
 </template>
 
 <script>
@@ -46,6 +66,7 @@ export default {
     },
     toggleVideoOpen() {
       this.videoOpen = !this.videoOpen;
+      console.log(this.jsonData);
     },
   },
 };

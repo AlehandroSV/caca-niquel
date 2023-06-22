@@ -1,6 +1,6 @@
 <template>
   <div
-    v-show="isOpen"
+    v-if="isOpen"
     class="flex flex-col w-screen h-screen absolute top-0 left-0 justify-center items-center text-white"
   >
     <div
@@ -8,7 +8,9 @@
       @click="onClose"
     />
 
-    <div class="relative bg-gray-600 rounded-lg p-4 z-10">
+    <div
+      class="relative bg-gray-600 rounded-lg p-0 md:p-4 z-10 lg:max-h-[720px] max-h-[600px] overflow-y-auto scrollbar-thin scrollbar-thumb-black-600"
+    >
       <Button
         @click="onClose"
         className="text-white absolute top-2 right-2 hover:text-gray-300"
