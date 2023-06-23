@@ -25,7 +25,7 @@
     <Popup :is-open="gameOpen" :on-close="toggleGameOpen">
       <template #children>
         <div class="m-2">
-          <Game />
+          <Game @win="toggleWin" />
         </div>
       </template>
     </Popup>
@@ -60,6 +60,14 @@
       </template>
     </Popup>
   </div>
+
+  <img
+    src="confete.gif"
+    alt="win"
+    :class="`${
+      win ? 'block' : 'hidden'
+    } w-screen h-screen absolute left-0 top-0 z-10`"
+  />
 </template>
 
 <script>
@@ -77,6 +85,7 @@ export default {
       gameOpen: false,
       videoOpen: false,
       jsonData: JsonData,
+      win: false,
     };
   },
   methods: {
@@ -85,6 +94,9 @@ export default {
     },
     toggleVideoOpen() {
       this.videoOpen = !this.videoOpen;
+    },
+    toggleWin() {
+      this.win = !this.win;
     },
   },
 };
