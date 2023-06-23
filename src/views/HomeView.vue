@@ -1,12 +1,25 @@
 <template>
-  <h1>Home</h1>
-  <Button @click="toggleGameOpen">
-    <template #text>Game</template>
-  </Button>
+  <div class="flex justify-center items-center h-full gap-8">
+    <Button
+      @click="toggleGameOpen"
+      className="font-bold bg-black-600 text-white text-2xl rounded py-2 px-4 transition-all
+      drop-shadow-lg border border-black-900
+      hover:bg-orange-300 hover:text-black-900 hover:scale-105
+      "
+    >
+      <template #text>Game</template>
+    </Button>
 
-  <Button @click="toggleVideoOpen">
-    <template #text>Video</template>
-  </Button>
+    <Button
+      @click="toggleVideoOpen"
+      className="font-bold bg-black-600 text-white text-2xl rounded py-2 px-4 transition-all
+      drop-shadow-lg border border-black-900
+      hover:bg-orange-300 hover:text-black-900 hover:scale-105
+      "
+    >
+      <template #text>Video</template>
+    </Button>
+  </div>
 
   <div v-for="data in jsonData" :key="data.title">
     <Popup :is-open="gameOpen" :on-close="toggleGameOpen">
@@ -19,15 +32,15 @@
       <template #children>
         <div class="flex flex-col m-2 items-center">
           <div class="mb-4 text-center">
-            <h1 class="font-semibold text-2xl mb-2">{{ data.title }}</h1>
+            <h1 class="font-semibold text-2xl mb-2">{{ data.video.title }}</h1>
             <p class="max-w-4xl">
-              {{ data.subtitle }}
+              {{ data.video.subtitle }}
             </p>
           </div>
 
-          <div v-show="data.link_youtube" class="w-full h-full">
+          <div v-if="data.video.link_youtube" class="w-full h-full">
             <iframe
-              :src="data.link_youtube"
+              :src="data.video.link_youtube"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -36,10 +49,12 @@
             ></iframe>
           </div>
 
-          <div v-show="data.link" class="w-full h-full">
-            <img :src="data.link" />
+          <div v-else class="w-full h-full">
+            <img :src="data.video.link" />
           </div>
         </div>
+
+        <Form :props="data.video.formulario" />
       </template>
     </Popup>
   </div>
@@ -48,11 +63,12 @@
 <script>
 import Button from "../components/Button.vue";
 import Popup from "../components/Popup.vue";
+import Form from "../components/Form.vue";
 
 import JsonData from "../json/db.json";
 
 export default {
-  components: { Button, Popup },
+  components: { Button, Popup, Form },
   data() {
     return {
       gameOpen: false,
@@ -66,7 +82,6 @@ export default {
     },
     toggleVideoOpen() {
       this.videoOpen = !this.videoOpen;
-      console.log(this.jsonData);
     },
   },
 };
