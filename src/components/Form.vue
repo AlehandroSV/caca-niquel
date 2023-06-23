@@ -1,109 +1,61 @@
 <template>
-  <form
-    v-if="props"
-    class="flex flex-col gap-3 mx-4"
-    @submit.prevent="submit($event)"
-  >
-    <!-- TODO: Implementar Mascara -->
-    <!-- TODO: Implementar Validação -->
-    {{ console.log(props) }}
-    <div v-for="data in props" :key="data.id">
-      <div v-if="data.model === 'email'">
-        <label :for="data.id">{{ data.name }}</label>
-        <div
-          class="flex border border-black dark:border-white items-center gap-3 py-3 px-3 w-full rounded-md focus-within:border-primary focus-within:ring-1 ring-secondary"
-        >
-          <input
-            class="bg-transparent h-full w-full flex-1 placeholder:text-gray-400 outline-none"
-            :id="data.id"
-            v-model="email"
-            :placeholder="data.placeholder"
-          />
-        </div>
-      </div>
-
-      <div v-if="data.model === 'nome'">
-        <label :for="data.id">{{ data.name }}</label>
-        <div
-          class="flex border border-black dark:border-white items-center gap-3 py-3 px-3 w-full rounded-md focus-within:border-primary focus-within:ring-1 ring-secondary"
-        >
-          <input
-            class="bg-transparent h-full w-full flex-1 placeholder:text-gray-400 outline-none"
-            :id="data.id"
-            v-model="nome"
-            :placeholder="data.placeholder"
-          />
-        </div>
-      </div>
-
-      <div v-if="data.model === 'phone'">
-        <label :for="data.id">{{ data.name }}</label>
-        <div
-          class="flex border border-black dark:border-white items-center gap-3 py-3 px-3 w-full rounded-md focus-within:border-primary focus-within:ring-1 ring-secondary"
-        >
-          <input
-            class="bg-transparent h-full w-full flex-1 placeholder:text-gray-400 outline-none"
-            :id="data.id"
-            v-model="phone"
-            :placeholder="data.placeholder"
-          />
-        </div>
-      </div>
-
-      <div v-if="data.model === 'gen'">
-        <label :for="data.id">{{ data.name }}</label>
-        <div
-          class="flex bg-white text-black-900 border border-black dark:border-white items-center gap-3 py-3 px-3 w-full rounded-md focus-within:border-primary focus-within:ring-1 ring-secondary"
-        >
-          <select
-            v-model="gen"
-            id=""
-            class="h-full w-full flex-1 placeholder:text-gray-400 outline-none"
+  <form @submit.prevent="submitForm">
+    <div v-for="field in formProps" :key="field.id">
+      <template v-if="field.generos">
+        <label :for="field.id">{{ field.name }}</label>
+        <select :id="field.id" v-model="field.value" class="text-black-900">
+          <option value="">Selecione um gênero</option>
+          <option
+            v-for="option in field.generos"
+            :value="option.name"
+            :key="option.id"
           >
-            <option value="">Selecione um Gênero</option>
-            <option
-              :value="gens.name"
-              v-for="gens in data.generos"
-              :key="gens.id"
-            >
-              {{ gens.name }}
-            </option>
-          </select>
-        </div>
-      </div>
-
-      <div v-if="data.salvarDados" class="flex gap-1 items-center">
+            {{ option.name }}
+          </option>
+        </select>
+      </template>
+      <template v-else>
+        <label :for="field.id">{{ field.name }}</label>
         <input
-          type="checkbox"
-          name="gen"
-          id="salve"
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 cursor-pointer"
+          :id="field.id"
+          :type="field.type"
+          :placeholder="field.placeholder"
+          v-model="field.value"
+          :name="field.model"
+          :mask="field.mask"
+          v-if="field.type !== 'submit' && !field.salvarDados"
         />
-        <label for="salve" class="cursor-pointer">Salvar Dados</label>
-      </div>
+      </template>
     </div>
-    <Button className="bg-black-600 py-2 rounded my-2">
-      <template #text>Enviar</template>
-    </Button>
+    <div>
+      <input id="saveData" type="checkbox" v-model="saveData" />
+      <label for="saveData">Salvar Dados</label>
+    </div>
+    <button type="submit">Enviar</button>
   </form>
 </template>
-<script>
-import Button from "./Button.vue";
 
+<script>
 export default {
+  props: {
+    props: {
+      type: Array,
+      required: true,
+    },
+  },
   data() {
     return {
-      email: "",
-      nome: "",
-      phone: "",
-      gen: "",
+      formProps: [],
+      saveData: false,
     };
   },
-  components: { Button },
-  props: ["props"],
+  mounted() {
+    this.formProps = this.props;
+  },
   methods: {
-    submit(e) {
-      // Implementar validação
+    submitForm() {
+      console.log(this.formProps);
+      console.log("Salvar Dados:", this.saveData);
     },
   },
 };

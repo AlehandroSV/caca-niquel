@@ -1,18 +1,48 @@
 [
   {
-    "game": [
-      {
-        "title": "Titulo",
-        "subtitle": "Game",
-        "formulario": [
-          {
-            "placeholder": "Placeholder",
-            "type": "text",
-            "value": ""
-          }
-        ]
-      }
-    ],
+    "game": {
+      "title": "Titulo",
+      "subtitle": "Game",
+      "formulario": [
+        {
+          "id": "1",
+          "name": "E-Mail",
+          "placeholder": "E-Mail",
+          "type": "email",
+          "model": "email",
+          "value": ""
+        },
+        {
+          "id": "2",
+          "name": "Nome",
+          "placeholder": "Nome",
+          "type": "text",
+          "model": "nome",
+          "value": ""
+        },
+        {
+          "id": "3",
+          "name": "Telefone",
+          "placeholder": "Telefone",
+          "type": "text",
+          "mask": "+## (##) # ####-####",
+          "model": "phone",
+          "value": ""
+        },
+        {
+          "id": "4",
+          "name": "Gênero",
+          "placeholder": "Gênero",
+          "type": "text",
+          "value": "",
+          "model": "gen",
+          "generos": [{ "name": "teste", "id": "1" }]
+        },
+        {
+          "salvarDados": true
+        }
+      ]
+    },
     "video": {
       "title": "Titulo",
       "subtitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit temporibus maxime aspernatur consectetur possimus assumenda similique fugit impedit atque qui commodi aperiam corporis ex ullam tempore, explicabo quisquam asperiores quae!",
@@ -52,9 +82,6 @@
           "value": "",
           "model": "gen",
           "generos": [{ "name": "teste", "id": "1" }]
-        },
-        {
-          "salvarDados": true
         }
       ]
     }

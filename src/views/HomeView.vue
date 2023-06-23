@@ -27,6 +27,8 @@
         <div class="m-2">
           <Game @win="toggleWin" />
         </div>
+
+        <Form :props="data.game.formulario" />
       </template>
     </Popup>
 
@@ -62,7 +64,7 @@
   </div>
 
   <img
-    src="confete.gif"
+    src="/confete.gif"
     alt="win"
     :class="`${
       win ? 'block' : 'hidden'
