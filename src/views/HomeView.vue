@@ -66,7 +66,7 @@
     alt="win"
     :class="`${
       win ? 'block' : 'hidden'
-    } w-screen h-screen absolute left-0 top-0 z-10`"
+    } w-screen h-screen absolute left-0 top-0 -z-10`"
   />
 </template>
 

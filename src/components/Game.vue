@@ -54,7 +54,7 @@
     <button
       @click="spin"
       :disabled="isSpinning"
-      class="transition-all text-black-900 bg-yellow-400 py-2 px-4 rounded mt-4 disabled:opacity-50 duration-700"
+      class="transition-all text-black-900 bg-yellow-400 py-2 px-4 rounded mt-4 disabled:opacity-50 duration-700 font-semibold"
     >
       Pressione
     </button>
@@ -101,6 +101,7 @@ export default {
 
             setTimeout(() => {
               this.$emit("win");
+              this.isSpinning = false;
             }, 1000);
           }
 
