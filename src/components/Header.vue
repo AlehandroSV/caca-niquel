@@ -10,11 +10,13 @@
 
     <ul class="flex gap-4">
       <li>
-        <router-link to="/" class="border px-2 py-1 rounded">Login</router-link>
+        <router-link to="/" class="border px-2 py-1 rounded"
+          >Entrar</router-link
+        >
       </li>
       <li>
         <router-link to="/" class="border px-2 py-1 rounded"
-          >Register</router-link
+          >Cadastrar-se</router-link
         >
       </li>
     </ul>

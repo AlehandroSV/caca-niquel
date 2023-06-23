@@ -7,7 +7,7 @@
       hover:bg-orange-300 hover:text-black-900 hover:scale-105
       "
     >
-      <template #text>Game</template>
+      <template #text>Caça-Níquel</template>
     </Button>
 
     <Button
@@ -17,15 +17,23 @@
       hover:bg-orange-300 hover:text-black-900 hover:scale-105
       "
     >
-      <template #text>Video</template>
+      <template #text>Vídeo</template>
     </Button>
   </div>
 
   <div v-for="data in jsonData" :key="data.title">
     <Popup :is-open="gameOpen" :on-close="toggleGameOpen">
       <template #children>
-        <div class="m-2">
-          <Game @win="toggleWin" />
+        <div class="flex flex-col m-2 items-center">
+          <div class="mb-4 text-center">
+            <h1 class="font-semibold text-2xl mb-2">{{ data.game.title }}</h1>
+            <p class="max-w-4xl">
+              {{ data.game.subtitle }}
+            </p>
+          </div>
+          <div class="m-2">
+            <Game @win="toggleWin" />
+          </div>
         </div>
 
         <Form :props="data.game.formulario" />
