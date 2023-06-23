@@ -1,23 +1,39 @@
 <template>
   <div class="flex flex-col justify-center items-center my-8">
-    <div
-      class="flex items-center justify-between mx-auto p-4 rounded mb-4 gap-3 bg-yellow-500 text-black-900"
-    >
-      <div
-        class="flex items-center justify-center w-16 h-16 font-bold border-2 border-black-900 rounded-md text-4xl bg-white"
-      >
-        {{ value1 }}
+    <div class="bg-red-600 p-2 flex gap-1">
+      <Bolinha :isSpinning="isSpinning" v-for="index in 15" :key="index" />
+    </div>
+    <div class="flex justify-between w-full">
+      <div class="bg-red-600 px-2 gap-2 flex flex-col">
+        <Bolinha :isSpinning="isSpinning" v-for="index in 5" :key="index" />
       </div>
-      <div
-        class="flex items-center justify-center w-16 h-16 font-bold border-2 border-black-900 rounded-md text-4xl bg-white"
-      >
-        {{ value2 }}
+      <div class="bg-black-900 flex items-center justify-center w-full">
+        <div
+          class="flex items-center justify-center p-2 rounded gap-3 bg-yellow-500 text-black-900"
+        >
+          <div
+            class="flex items-center justify-center w-16 h-16 font-bold border-2 border-black-900 rounded-md text-4xl bg-white"
+          >
+            {{ value1 }}
+          </div>
+          <div
+            class="flex items-center justify-center w-16 h-16 font-bold border-2 border-black-900 rounded-md text-4xl bg-white"
+          >
+            {{ value2 }}
+          </div>
+          <div
+            class="flex items-center justify-center w-16 h-16 font-bold border-2 border-black-900 rounded-md text-4xl bg-white"
+          >
+            {{ value3 }}
+          </div>
+        </div>
       </div>
-      <div
-        class="flex items-center justify-center w-16 h-16 font-bold border-2 border-black-900 rounded-md text-4xl bg-white"
-      >
-        {{ value3 }}
+      <div class="bg-red-600 px-2 gap-2 flex flex-col">
+        <Bolinha :isSpinning="isSpinning" v-for="index in 5" :key="index" />
       </div>
+    </div>
+    <div class="bg-red-600 p-2 gap-1 flex">
+      <Bolinha :isSpinning="isSpinning" v-for="index in 15" :key="index" />
     </div>
 
     <button
@@ -34,9 +50,11 @@
 </template>
 
 <script>
+import Bolinha from "./Bolinha.vue";
+
 export default {
-  setup() {},
   name: "GameItem",
+  components: { Bolinha },
   data() {
     return {
       value1: 7,
