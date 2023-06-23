@@ -24,7 +24,9 @@
   <div v-for="data in jsonData" :key="data.title">
     <Popup :is-open="gameOpen" :on-close="toggleGameOpen">
       <template #children>
-        <div class="m-2"></div>
+        <div class="m-2">
+          <Game />
+        </div>
       </template>
     </Popup>
 
@@ -64,11 +66,12 @@
 import Button from "../components/Button.vue";
 import Popup from "../components/Popup.vue";
 import Form from "../components/Form.vue";
+import Game from "../components/Game.vue";
 
 import JsonData from "../json/db.json";
 
 export default {
-  components: { Button, Popup, Form },
+  components: { Button, Popup, Form, Game },
   data() {
     return {
       gameOpen: false,

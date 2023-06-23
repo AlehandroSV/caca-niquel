@@ -13,7 +13,7 @@
     >
       <Button
         @click="onClose"
-        className="text-white absolute top-5 right-2 hover:text-gray-300"
+        className="text-white absolute top-2 right-2 hover:text-gray-300"
       >
         <template #text>
           <PhX :size="20" />
