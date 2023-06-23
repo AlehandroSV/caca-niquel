@@ -1,24 +1,42 @@
 <template>
-  <div class="flex justify-center items-center h-full gap-8">
-    <Button
-      @click="toggleGameOpen"
-      className="font-bold bg-black-600 text-white text-2xl rounded py-2 px-4 transition-all
-      drop-shadow-lg border border-black-900
+  <div
+    class="flex justify-center items-center h-full gap-6 flex-wrap overflow-y-auto scrollbar-thin scrollbar-thumb-black-600"
+  >
+    <Card
+      title="Caça-Níquel"
+      description="Bem-vindo ao mundo dos caça-níqueis! Prepare-se para girar, vencer e se divertir com gráficos impressionantes, recursos especiais e prêmios épicos. Descubra a emoção dos jogos de sorte e entre nessa incrível aventura de diversão!"
+      img="imgs/caca-niquel.png"
+    >
+      <template #button>
+        <Button
+          @click="toggleGameOpen"
+          className="font-bold bg-black-600 text-white text-2xl rounded py-2 px-4 transition-all
+      drop-shadow-lg border border-white
       hover:bg-orange-300 hover:text-black-900 hover:scale-105
       "
-    >
-      <template #text>Caça-Níquel</template>
-    </Button>
+        >
+          <template #text>Caça-Níquel</template>
+        </Button>
+      </template>
+    </Card>
 
-    <Button
-      @click="toggleVideoOpen"
-      className="font-bold bg-black-600 text-white text-2xl rounded py-2 px-4 transition-all
-      drop-shadow-lg border border-black-900
+    <Card
+      title="Video de Introdução"
+      description="Bem-vindo à jornada emocionante dos caça-níqueis! Prepare-se para girar, vencer e se divertir em um universo de prêmios e adrenalina. Está pronto? A sorte está lançada! Vamos começar essa aventura dos caça-níqueis!"
+      img="imgs/caca-niquel.png"
+    >
+      <template #button>
+        <Button
+          @click="toggleVideoOpen"
+          className="font-bold bg-black-600 text-white text-2xl rounded py-2 px-4 transition-all
+      drop-shadow-lg border border-white
       hover:bg-orange-300 hover:text-black-900 hover:scale-105
       "
-    >
-      <template #text>Vídeo</template>
-    </Button>
+        >
+          <template #text>Video</template>
+        </Button>
+      </template>
+    </Card>
   </div>
 
   <div v-for="data in jsonData" :key="data.title">
@@ -87,9 +105,10 @@ import Form from "../components/Form.vue";
 import Game from "../components/Game.vue";
 
 import JsonData from "../json/db.json";
+import Card from "../components/Card.vue";
 
 export default {
-  components: { Button, Popup, Form, Game },
+  components: { Button, Popup, Form, Game, Card },
   data() {
     return {
       gameOpen: false,

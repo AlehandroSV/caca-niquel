@@ -9,6 +9,9 @@ export default {
           900: "#000",
         },
       },
+      backgroundImage: {
+        backgroundAll: "url('/imgs/background.jpg')",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar")],
