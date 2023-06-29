@@ -9,7 +9,7 @@
     />
 
     <div
-      class="relative bg-gray-600 rounded-lg p-0 md:p-4 z-10 lg:max-h-[720px] max-h-[600px] overflow-y-auto scrollbar-thin scrollbar-thumb-black-600"
+      class="relative bg-gray-600 rounded-lg p-0 mx-4 md:mx-12 md:p-4 z-10 lg:max-h-[600px] max-h-[500px] overflow-y-auto scrollbar-thin scrollbar-thumb-black-600"
     >
       <Button
         @click="onClose"
