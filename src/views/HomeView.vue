@@ -42,19 +42,20 @@
   <div v-for="data in jsonData" :key="data.title">
     <Popup :is-open="gameOpen" :on-close="toggleGameOpen">
       <template #children>
-        <div class="flex flex-col m-2 items-center">
+        <div class="flex justify-center flex-wrap m-2 items-center">
+          <div class="m-2">
+            <Game @win="toggleWin" />
+          </div>
           <div class="mb-4 text-center">
             <h1 class="font-semibold text-2xl mb-2">{{ data.game.title }}</h1>
             <p class="max-w-4xl">
               {{ data.game.subtitle }}
             </p>
-          </div>
-          <div class="m-2">
-            <Game @win="toggleWin" />
+            <div>
+              <Form :props="data.game.formulario" class="mt-4" />
+            </div>
           </div>
         </div>
-
-        <Form :props="data.game.formulario" />
       </template>
     </Popup>
 

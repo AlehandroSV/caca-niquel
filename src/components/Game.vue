@@ -60,7 +60,7 @@
     </button>
   </div>
 
-  <audio ref="audioElement" src="/spin.mp3" />
+  <audio ref="audioElement" src="/spin.mp3" volume="0.2" />
 </template>
 
 <script>

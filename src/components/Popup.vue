@@ -16,7 +16,7 @@
         className="text-white absolute top-2 right-2 hover:text-gray-300"
       >
         <template #text>
-          <PhX :size="20" />
+          <PhXCircle :size="32" />
         </template>
       </Button>
 
@@ -27,7 +27,7 @@
 
 <script>
 import Button from "./Button.vue";
-import { PhX } from "@phosphor-icons/vue";
+import { PhXCircle } from "@phosphor-icons/vue";
 
 export default {
   name: "PopUp",
@@ -36,6 +36,6 @@ export default {
   },
   methods: {},
   props: ["isOpen", "onClose"],
-  components: { Button, PhX },
+  components: { Button, PhXCircle },
 };
 </script>

@@ -2,8 +2,8 @@
   <form @submit.prevent="submitForm" class="mb-5">
     <div v-for="field in formProps" :key="field.id" class="mx-4 flex flex-col">
       <template v-if="field.generos">
-        <div class="my-2">
-          <label :for="field.id">{{ field.name }}</label>
+        <div class="my-2 flex flex-col">
+          <label :for="field.id" class="text-left">{{ field.name }}</label>
           <div
             class="flex border border-black bg-white dark:border-white items-center gap-3 py-3 px-3 w-full rounded-md focus-within:border-primary focus-within:ring-1 ring-secondary"
           >
@@ -25,8 +25,8 @@
         </div>
       </template>
       <template v-else-if="!field.salvarDados">
-        <div class="my-2">
-          <label :for="field.id">{{ field.name }}</label>
+        <div class="my-2 flex flex-col">
+          <label :for="field.id" class="text-left">{{ field.name }}</label>
           <div
             class="flex border border-black dark:border-white items-center gap-3 py-3 px-3 w-full rounded-md focus-within:border-primary focus-within:ring-1 ring-secondary"
             v-if="field.type !== 'submit' && !field.salvarDados"
