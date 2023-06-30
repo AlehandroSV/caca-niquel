@@ -2,7 +2,7 @@
   {
     "game": {
       "title": "Jogo Caça-Níquel",
-      "subtitle": "Descubra a empolgante experiência dos caça-níqueis! Com uma infinidade de temas cativantes, gráficos impressionantes e recursos especiais, cada giro é uma chance de conquistar grandes vitórias. Explore a emoção dos símbolos alinhados perfeitamente, dos bônus surpreendentes e das rodadas de giros grátis. Com apostas flexíveis e um potencial incrível de multiplicar seus ganhos, esteja preparado para uma aventura cheia de diversão e sorte. Entre no mundo dos caça-níqueis e deixe-se envolver pela atmosfera mágica de jogos que podem transformar sua sorte em segundos.",
+      "subtitle": "Descubra a empolgante experiência dos caça-níqueis!",
       "formulario": [
         {
           "id": "1",
@@ -48,7 +48,7 @@
     },
     "video": {
       "title": "Video de Introdução",
-      "subtitle": "Bem-vindo à emocionante jornada dos caça-níqueis, onde a sorte está ao seu lado e a adrenalina está no ar. Prepare-se para girar os rolos e descobrir um universo repleto de prêmios e diversão sem limites. Entre no ritmo das máquinas e deixe-se levar pela empolgação de cada giro. Esteja pronto para uma experiência inesquecível de pura emoção e grandes vitórias. A sorte está lançada. Vamos começar essa aventura dos caça-níqueis!",
+      "subtitle": "Bem-vindo à emocionante jornada dos caça-níqueis, onde a sorte está ao seu lado e a adrenalina está no ar.",
       "link_youtube": "https://www.youtube.com/embed/QrSWODOQ0tY",
       "link": "",
       "formulario": [

@@ -3,9 +3,8 @@
     <div v-for="field in formProps" :key="field.id" class="mx-4 flex flex-col">
       <template v-if="field.generos">
         <div class="my-2 flex flex-col">
-          <label :for="field.id" class="text-left">{{ field.name }}</label>
           <div
-            class="flex border border-black bg-white dark:border-white items-center gap-3 py-3 px-3 w-full rounded-md focus-within:border-primary focus-within:ring-1 ring-secondary"
+            class="flex border border-black bg-white dark:border-white items-center gap-3 py-3 px-3 w-full rounded-full focus-within:border-primary focus-within:ring-1 ring-secondary"
           >
             <select
               :id="field.id"
@@ -26,9 +25,8 @@
       </template>
       <template v-else-if="!field.salvarDados">
         <div class="my-2 flex flex-col">
-          <label :for="field.id" class="text-left">{{ field.name }}</label>
           <div
-            class="flex border border-black dark:border-white items-center gap-3 py-3 px-3 w-full rounded-md focus-within:border-primary focus-within:ring-1 ring-secondary"
+            class="flex border border-black dark:border-white items-center gap-3 py-3 px-3 w-full rounded-full focus-within:border-primary focus-within:ring-1 ring-secondary"
             v-if="field.type !== 'submit' && !field.salvarDados"
           >
             <input
@@ -49,9 +47,11 @@
             id="saveData"
             type="checkbox"
             v-model="saveData"
-            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+            class="w-4 h-4 text-white bg-transparent focus:ring-blue-500 focus:ring-2"
           />
-          <label for="saveData" class="cursor-pointer">Salvar dados</label>
+          <label for="saveData" class="cursor-pointer select-none"
+            >Salvar dados</label
+          >
         </div>
       </template>
     </div>
@@ -59,7 +59,7 @@
     <div class="flex w-full items-center justify-center">
       <button
         type="submit"
-        class="transition-all text-black-900 bg-yellow-400 py-2 px-4 rounded mt-4 disabled:opacity-50 duration-700 font-semibold"
+        class="transition-all text-black-900 w-full bg-yellow-400 py-2 px-4 mx-4 rounded-full mt-4 disabled:opacity-50 duration-700 font-semibold"
       >
         Enviar
       </button>
