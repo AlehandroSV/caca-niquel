@@ -1,14 +1,10 @@
 <template>
-  <form
-    @submit.prevent="submitForm"
-    class="mb-5"
-    v-if="formularioEnviado == false"
-  >
+  <form @submit.prevent="submitForm" v-if="formularioEnviado == false">
     <div v-for="field in formProps" :key="field.id" class="mx-4 flex flex-col">
       <template v-if="field.generos">
-        <div class="my-2 flex flex-col">
+        <div class="my-1 flex flex-col">
           <div
-            class="flex border border-black bg-white dark:border-white items-center gap-3 py-3 px-3 w-full rounded-full focus-within:border-primary focus-within:ring-1 ring-secondary"
+            class="flex border border-black bg-white dark:border-white items-center py-1 px-2 text-sm w-full rounded-full focus-within:border-primary focus-within:ring-1 ring-secondary"
           >
             <select
               :id="field.id"
@@ -27,10 +23,11 @@
           </div>
         </div>
       </template>
+
       <template v-else-if="!field.salvarDados">
-        <div class="my-2 flex flex-col">
+        <div class="my-1 flex flex-col">
           <div
-            class="flex border border-black dark:border-white items-center gap-3 py-3 px-3 w-full rounded-full focus-within:border-primary focus-within:ring-1 ring-secondary"
+            class="flex border border-black dark:border-white items-center gap-3 py-1 px-2 w-full text-sm rounded-full focus-within:border-primary focus-within:ring-1 ring-secondary"
             v-if="field.type !== 'submit' && !field.salvarDados"
           >
             <input
@@ -56,12 +53,12 @@
         </div>
       </template>
       <template v-else-if="field.salvarDados">
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-1 ml-2 text-sm">
           <input
             id="saveData"
             type="checkbox"
             v-model="saveData"
-            class="w-4 h-4 text-white bg-transparent focus:ring-blue-500 focus:ring-2"
+            class="w-3 h-3 text-white bg-transparent focus:ring-blue-500 focus:ring-1"
           />
           <label for="saveData" class="cursor-pointer select-none"
             >Salvar dados</label
@@ -73,7 +70,7 @@
     <div class="flex w-full items-center justify-center">
       <button
         type="submit"
-        class="transition-all text-black-900 w-full bg-yellow-400 py-2 px-4 mx-4 rounded-full mt-4 disabled:opacity-50 duration-700 font-semibold"
+        class="transition-all text-black-900 w-full bg-yellow-400 py-1 px-2 mx-4 rounded-full mt-2 disabled:opacity-50 duration-700 font-semibold"
       >
         Enviar
       </button>
