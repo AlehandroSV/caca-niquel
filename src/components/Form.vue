@@ -35,7 +35,17 @@
               :placeholder="field.placeholder"
               v-model="field.value"
               :name="field.model"
-              :mask="field.mask"
+              v-if="field.mask"
+              v-mask="field.mask"
+              class="bg-transparent h-full w-full flex-1 placeholder:text-gray-400 outline-none cursor-pointer [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            />
+            <input
+              :id="field.id"
+              :type="field.type"
+              :placeholder="field.placeholder"
+              v-model="field.value"
+              :name="field.model"
+              v-else
               class="bg-transparent h-full w-full flex-1 placeholder:text-gray-400 outline-none cursor-pointer [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             />
           </div>

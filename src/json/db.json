@@ -24,9 +24,10 @@
           "id": "3",
           "name": "Telefone",
           "placeholder": "Telefone",
-          "type": "number",
+          "type": "",
           "model": "phone",
-          "value": ""
+          "value": "",
+          "mask": "(##) ####-####"
         },
         {
           "id": "4",
