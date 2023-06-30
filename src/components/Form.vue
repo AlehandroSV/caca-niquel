@@ -1,5 +1,9 @@
 <template>
-  <form @submit.prevent="submitForm" class="mb-5">
+  <form
+    @submit.prevent="submitForm"
+    class="mb-5"
+    v-if="formularioEnviado == false"
+  >
     <div v-for="field in formProps" :key="field.id" class="mx-4 flex flex-col">
       <template v-if="field.generos">
         <div class="my-2 flex flex-col">
@@ -75,6 +79,8 @@
       </button>
     </div>
   </form>
+
+  <div v-else>Formulário enviado com sucesso!</div>
 </template>
 
 <script>
@@ -89,6 +95,7 @@ export default {
     return {
       formProps: [],
       saveData: false,
+      formularioEnviado: false,
     };
   },
   mounted() {
@@ -98,6 +105,7 @@ export default {
     submitForm() {
       console.log(this.formProps);
       console.log("Salvar Dados:", this.saveData);
+      this.formularioEnviado = true;
     },
   },
 };

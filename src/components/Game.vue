@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col justify-center items-center mt-8 select-none">
-    <div class="flex items-center">
+    <div class="flex items-center" :onClick="spin">
       <div>
         <div class="bg-red-600 p-2 flex gap-1 rounded-t-lg">
           <Bolinha :isSpinning="isSpinning" v-for="index in 15" :key="index" />
