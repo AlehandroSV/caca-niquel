@@ -44,8 +44,10 @@
       <template #children>
         <div class="flex justify-center flex-wrap m-2 items-center">
           <div class="mb-4 text-center">
-            <h1 class="font-semibold text-2xl mb-1">{{ data.game.title }}</h1>
-            <p class="max-w-4xl">
+            <h1 class="font-semibold text-lg sm:text-2xl mb-1">
+              {{ data.game.title }}
+            </h1>
+            <p class="max-w-4xl text-sm sm:text-base">
               {{ data.game.subtitle }}
             </p>
             <div class="m-2">
@@ -63,8 +65,10 @@
       <template #children>
         <div class="flex flex-col m-2 items-center">
           <div class="mb-4 text-center">
-            <h1 class="font-semibold text-2xl mb-1">{{ data.video.title }}</h1>
-            <p class="max-w-4xl">
+            <h1 class="font-semibold text-lg sm:text-2xl mb-1">
+              {{ data.video.title }}
+            </h1>
+            <p class="max-w-4xl text-sm sm:text-base">
               {{ data.video.subtitle }}
             </p>
           </div>
