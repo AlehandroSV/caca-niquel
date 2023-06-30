@@ -4,12 +4,12 @@
       <template v-if="field.generos">
         <div class="my-1 flex flex-col">
           <div
-            class="flex border border-black bg-white dark:border-white items-center py-1 px-2 text-sm w-full rounded-full focus-within:border-primary focus-within:ring-1 ring-secondary"
+            class="flex border border-black bg-transparent dark:border-white items-center py-2 px-2 text-sm w-full rounded-full focus-within:border-primary focus-within:ring-1 ring-secondary"
           >
             <select
               :id="field.id"
               v-model="field.value"
-              class="bg-transparent h-full w-full flex-1 placeholder:text-gray-400 outline-none text-black-900 cursor-pointer"
+              class="bg-[#4B5563] text-white text-sm block w-full outline-none cursor-pointer"
             >
               <option value="">Selecione um gênero</option>
               <option
