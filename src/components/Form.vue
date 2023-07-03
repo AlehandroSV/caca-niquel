@@ -10,6 +10,7 @@
               :id="field.id"
               v-model="field.value"
               class="bg-[#4B5563] text-white text-sm block w-full outline-none cursor-pointer"
+              :required="field.required"
             >
               <option value="">Selecione um gênero</option>
               <option
@@ -39,6 +40,7 @@
               v-if="field.mask"
               v-mask="field.mask"
               class="bg-transparent h-full w-full flex-1 placeholder:text-gray-400 outline-none cursor-pointer [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              :required="field.required"
             />
             <input
               :id="field.id"
@@ -48,6 +50,7 @@
               :name="field.model"
               v-else
               class="bg-transparent h-full w-full flex-1 placeholder:text-gray-400 outline-none cursor-pointer [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              :required="field.required"
             />
           </div>
         </div>
@@ -59,6 +62,7 @@
             type="checkbox"
             v-model="saveData"
             class="w-3 h-3 text-white bg-transparent focus:ring-blue-500 focus:ring-1"
+            :required="field.required"
           />
           <label for="saveData" class="cursor-pointer select-none"
             >Salvar dados</label

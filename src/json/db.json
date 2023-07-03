@@ -10,7 +10,8 @@
           "placeholder": "E-Mail",
           "type": "email",
           "model": "email",
-          "value": ""
+          "value": "",
+          "required": true
         },
         {
           "id": "2",
@@ -18,7 +19,8 @@
           "placeholder": "Nome",
           "type": "text",
           "model": "nome",
-          "value": ""
+          "value": "",
+          "required": true
         },
         {
           "id": "3",
@@ -27,7 +29,8 @@
           "type": "",
           "model": "phone",
           "value": "",
-          "mask": "(##) ####-####"
+          "mask": "(##) ####-####",
+          "required": true
         },
         {
           "id": "4",
@@ -40,7 +43,8 @@
             { "name": "Masculino", "id": "1" },
             { "name": "Feminino", "id": "1" },
             { "name": "Outro", "id": "1" }
-          ]
+          ],
+          "required": true
         },
         {
           "salvarDados": true
@@ -59,7 +63,8 @@
           "placeholder": "E-Mail",
           "type": "email",
           "model": "email",
-          "value": ""
+          "value": "",
+          "required": false
         },
         {
           "id": "2",
@@ -67,7 +72,8 @@
           "placeholder": "Nome",
           "type": "text",
           "model": "nome",
-          "value": ""
+          "value": "",
+          "required": false
         },
         {
           "id": "3",
@@ -75,7 +81,8 @@
           "placeholder": "Telefone",
           "type": "text",
           "model": "phone",
-          "value": ""
+          "value": "",
+          "required": true
         },
         {
           "id": "4",
@@ -88,7 +95,8 @@
             { "name": "Masculino", "id": "1" },
             { "name": "Feminino", "id": "1" },
             { "name": "Outro", "id": "1" }
-          ]
+          ],
+          "required": true
         }
       ]
     }
